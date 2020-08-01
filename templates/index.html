@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Deep Learning Project - Image Captioning</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+    <body class="site">
+        <header>
+            <nav class="navbar navbar-light bg-primary">
+                <span class="text-white navbar-brand">DL2020Project</span>
+            </nav>
+        </header>
+
+        <main class="py-4 site-content">
+            <h1 class="text-monospace display-4">
+                <img style="width: 1em" src="{{ url_for('static', filename='logo.png') }}" alt="logo" />
+                <span>Captionify</span>
+            </h1>
+            <div class="my-4">
+                <input type="file" name="inpFile" id="inpFile">
+                <div class="mt-3 image-preview">
+                    <img src="" alt="Image Preview" id="imagePreview">
+                    <span id="defaultText">Image Preview</span>
+                </div>
+            </div>
+            <blockquote class="blockquote text-right">
+                <p class="mb-0 text-break" id="generatedCaption"></p>
+                <footer class="blockquote-footer">Our DL Model</footer>
+            </blockquote>
+            <button type="button" class="btn btn-outline-primary" id="generateCaption">Generate Caption</button>
+        </main>
+
+        <footer class="footer text-center py-3">
+            <span>
+                A joint effort by: Billio Jeverson - Edric - Kwon Inhyuk - Vieri Vincent
+            </span>
+        </footer>
+        <div class="modal"></div>
+    </body>
+</html>
