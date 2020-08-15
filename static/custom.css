@@ -2,9 +2,11 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-} 
+}
+
 .site-content {
     display: flex;
+    text-align: center;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-weight: bold;
     color: #cccccc;
 }

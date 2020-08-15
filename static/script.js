@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $("p#outputText").hide();
+
     $(document).on({
         ajaxStart: function() { $("body").addClass("loading"); },
         ajaxStop: function() { $("body").removeClass("loading"); }    
@@ -7,7 +9,7 @@ $(document).ready(function() {
 
     $("input#inpFile").change( function(){
         const file = $("input#inpFile").prop("files")[0];
-        $(".blockquote").hide();
+        $("p#outputText").hide();
 
         if (file) {
             const reader = new FileReader();
@@ -27,7 +29,7 @@ $(document).ready(function() {
 
     });
 
-    $("button#generateCaption").click( function() {
+    $("button#generateCount").click( function() {
         const file = $("input#inpFile").prop("files")[0];
 
         if (file) {
@@ -37,11 +39,11 @@ $(document).ready(function() {
                 method : 'POST',
                 processData : false,
                 contentType : false,
-                url : '/generateCaption',
+                url : '/cellcount-image',
                 data : formdata,
                 success : function(res){
-                    $("p#generatedCaption").text(res["caption"])
-                    $(".blockquote").show();
+                    $("span#cellCount").text(res["count"])
+                    $("p#outputText").show();
                 }
             })
         } else {

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Deep Learning Project - Image Captioning</title>
+        <title>AI Project - Cell Counting</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -14,14 +14,14 @@
     <body class="site">
         <header>
             <nav class="navbar navbar-light bg-primary">
-                <span class="text-white navbar-brand">DL2020Project</span>
+                <span class="text-white navbar-brand">Term 8 SUTD - AI Project</span>
             </nav>
         </header>
 
         <main class="py-4 site-content">
             <h1 class="text-monospace display-4">
                 <img style="width: 1em" src="{{ url_for('static', filename='logo.png') }}" alt="logo" />
-                <span>Captionify</span>
+                <span>Cell Counter</span>
             </h1>
             <div class="my-4">
                 <input type="file" name="inpFile" id="inpFile">
@@ -30,16 +30,13 @@
                     <span id="defaultText">Image Preview</span>
                 </div>
             </div>
-            <blockquote class="blockquote text-right">
-                <p class="mb-0 text-break" id="generatedCaption"></p>
-                <footer class="blockquote-footer">Our DL Model</footer>
-            </blockquote>
-            <button type="button" class="btn btn-outline-primary" id="generateCaption">Generate Caption</button>
+            <p id="outputText" class="font-weight-bold text-monospace">Number of Cells Identified: <span id="cellCount"></span></p>
+            <button type="button" class="btn btn-outline-primary" id="generateCount">Compute Cell Count</button>
         </main>
 
         <footer class="footer text-center py-3">
             <span>
-                A joint effort by: Billio Jeverson - Edric - Kwon Inhyuk - Vieri Vincent
+                Group Members:<br/>Edric - Vieri Vincent - Faiz Rahamat - Shaun Sim
             </span>
         </footer>
         <div class="modal"></div>
